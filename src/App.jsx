@@ -5,7 +5,8 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, 
   PieChart, Pie, Cell 
 } from 'recharts';
-import { Landmark, TrendingUp, AlertCircle, LayoutDashboard, Table as TableIcon } from 'lucide-react';
+// Se agrega 'Wallet' a la lista de importaciones para corregir el ReferenceError
+import { Landmark, TrendingUp, AlertCircle, LayoutDashboard, Table as TableIcon, Wallet } from 'lucide-react';
 
 /**
  * Solución al error de compilación:
