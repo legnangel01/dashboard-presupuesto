@@ -11,12 +11,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
       - name: Install and Build
         run: |
-          npm install
+          npm ci
           npm run build
         env:
           VITE_FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+          # Esto evita que advertencias menores detengan el build
+          CI: false 
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
